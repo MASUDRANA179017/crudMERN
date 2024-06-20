@@ -63,7 +63,7 @@ app.delete("/deleteuser/:id", async (req, res) => {
 
 
 app.get("/userlist", async (req, res)=>{
-    const user = await User.find(req.body)
+    const user = await User.find()
     res.send(user)
 } )
 
