@@ -3,12 +3,7 @@ const Schema = mongoose.Schema;
 
 // Define the Registrar schema
 const registrarSchema = new Schema({
-    firstName: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    lastName: {
+    name: {
         type: String,
         required: true,
         trim: true
@@ -20,10 +15,18 @@ const registrarSchema = new Schema({
         trim: true,
         lowercase: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     phone: {
         type: String,
         required: true,
         trim: true
+    },
+    emailVerify: {
+        type: Boolean,
+        default: false
     },
     registrationDate: {
         type: Date,
