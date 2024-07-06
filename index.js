@@ -10,6 +10,7 @@ const registrarUser = require("./controlar/registrationControlar.js");
 const dbConnection = require("./helper/dbcanection.js");
 const login = require('./controlar/loginControlar.js');
 const emailVerificationController = require('./controlar/emailVerificationControlar.js');
+const blogPostController = require('./controlar/blogControlar.js');
 
 dbConnection()
 
@@ -18,13 +19,15 @@ dbConnection()
 app.use(express.json());
 
 
-
+// check secuty and controller 
 app.get("/security", security, secure )
+
+// main route 
 app.post("/registration", security, registrarUser )
 app.post("/login", security, login )
 app.get("/:email", emailVerificationController)
 
-
+app.post("/blog", security, blogPostController )
 
 
 
