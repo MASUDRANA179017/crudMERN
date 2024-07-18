@@ -17,7 +17,6 @@ const blogPostSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
     },
     postedBy: {
         type: mongoose.Schema.Types.ObjectId,
@@ -26,6 +25,10 @@ const blogPostSchema = new Schema({
 });
 
 // Create the Registrar model
-const BlogPost = mongoose.model('User', blogPostSchema);
+const BlogPost = mongoose.model('BlogPost', blogPostSchema);
 
 module.exports = BlogPost;
+
+
+
+

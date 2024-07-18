@@ -4,6 +4,10 @@ let Blog = require ("../model/blogModel")
 let blogPostController = (req, res)=>{ 
     const {title, description, image, postedBy} = req.body
 
+
+   // console.log(req.file.originalname);
+
+
     let blog = new Blog({
         title: title,
         description: description,
